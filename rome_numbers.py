@@ -41,3 +41,20 @@ def roman_to_int_v2(roman_num: str) -> int:
 print(roman_to_int_v2("MCMXCIV"))
 # result1 = roman_to_int_v2("MCMXCIV")
 # assert result1 == 1994
+
+
+def roman_to_int_v3(roman_num: str) -> int:
+    roman_dict = {"I": 1, "V": 5, "X": 10,
+                  "L": 50, "C": 100, "D": 500, "M": 1000}
+    
+    result_num = prev_digit = 0
+
+    for digit in map(lambda x : roman_dict[x], reversed(roman_num)):
+        if digit < prev_digit:
+            result_num -= digit
+        else:
+            result_num += digit
+
+        prev_digit = digit
+
+    return result_num
