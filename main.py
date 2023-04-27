@@ -6,7 +6,7 @@ for i in range(10):
     print(i)
 
 print(True and a)
-def summ(*args):
-    return sum(args)
+def summary(*args):
+    return summary(args)
 
 
